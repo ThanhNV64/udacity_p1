@@ -22,6 +22,9 @@ public class NoteService {
     }
 
     public Integer insertNote(Note note) {
+        if (noteMapper.checkDuplicate(note) != null) {
+            return 0;
+        }
         return noteMapper.insertNote(note);
     }
 
@@ -30,6 +33,9 @@ public class NoteService {
     }
 
     public Integer updateNoteById(Note note) {
+        if (noteMapper.checkDuplicate(note) != null) {
+            return 0;
+        }
         return noteMapper.updateNoteById(note);
     }
 

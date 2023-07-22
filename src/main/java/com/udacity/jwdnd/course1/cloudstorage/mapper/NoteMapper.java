@@ -23,4 +23,7 @@ public interface NoteMapper {
     @Select("SELECT * FROM NOTES WHERE noteid = #{noteId} and userid = #{userId}")
     Note getNoteById(Integer noteId, Integer userId);
 
+    @Select("SELECT * FROM NOTES WHERE notetitle = #{noteTitle} and notedescription = #{noteDescription} and userid = #{userId}")
+    Note checkDuplicate(Note note);
+
 }

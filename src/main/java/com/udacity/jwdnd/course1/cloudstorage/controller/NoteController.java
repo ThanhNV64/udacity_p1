@@ -38,7 +38,7 @@ public class NoteController {
         }
 
         if (cnt == 0) {
-            redirectAttributes.addFlashAttribute("errMsg", "Save Note failed. Try again!");
+            redirectAttributes.addFlashAttribute("errMsg", "Duplicate note or Save Note failed. Try again!");
             return "redirect:/result?error";
         }
         return "redirect:/result?success";
